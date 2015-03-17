@@ -12,8 +12,10 @@
 
 </head>
 <body>
-
-<%= yield %>
-
+    <%= render partial: "layouts/navbar" %>
+    <div class="container" id="content-zone">
+        <%= yield %>
+    </div>
+    <%= render partial: "layouts/modals" %>
 </body>
 </html>

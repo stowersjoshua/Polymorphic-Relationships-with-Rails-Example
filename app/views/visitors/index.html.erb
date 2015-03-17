@@ -1,13 +1,24 @@
-<p class="navbar-text pull-right">
-  <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>. (<%= current_user.username %>)<br />
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-  <% else %>
-      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-  <% end %>
-</p>
+
+<% if user_signed_in? %>
+Welcome back, <%= current_user.username %>
+<% end %>
+
+
+Click HERE to begin make your own post posts.
+
+
+
+
+Show all posts here. If the user is signed in, also show a like button.
+
+
+
+
+
+
+
+
+
 <div style="background-color: moccasin; padding: 20px; width: 600px;">
   <%= link_to 'See a list of our amazing users!', users_path %>
 </div>
