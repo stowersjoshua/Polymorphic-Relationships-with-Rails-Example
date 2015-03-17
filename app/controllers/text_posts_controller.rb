@@ -5,8 +5,8 @@ class TextPostsController < ApplicationController
 
   def create
     @text_post = TextPost.new(text_post_params)
+    @text_post.user_id = current_user.id
     @text_post.save
-    #head :ok
     render action: "show"
   end
 
@@ -21,7 +21,7 @@ class TextPostsController < ApplicationController
 
   private
     def text_post_params
-      params.require(:text_post).permit(:title, :user, :message)
+      params.require(:text_post).permit(:title, :user, :message, :user_id)
     end
 
 end
