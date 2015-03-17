@@ -10,6 +10,13 @@ class TextPostsController < ApplicationController
     render action: "show"
   end
 
+  def like
+    #Select the TextPost to be liked
+    @liked_text = TextPost.find(params[:ref_num])
+    @liked_text.votes.create!(like: true, user_id: current_user.id)
+    redirect_to root_path
+  end
+
   def show
 
   end

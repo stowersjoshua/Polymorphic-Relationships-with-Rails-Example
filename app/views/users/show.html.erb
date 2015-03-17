@@ -5,7 +5,7 @@
 <% @image_posts.each do |x| %>
     <div class="post-box well">
       <% if user_signed_in? %>
-          <button type="button" class="btn btn-info pull-right like-button">Like</button>
+          <%= link_to "Like", like_image_path(:ref_num => x.id), type: "button", class: "btn btn-info pull-right like-button" %>
       <% end %>
       Title: <%= x.title %><br />
       <% if x.image? %>
@@ -23,9 +23,30 @@
       Title: <%= x.title %><br />
       Message: <%= x.message %>
       <% if user_signed_in? %>
-          <button type="button" class="btn btn-info pull-right like-button">Like</button>
+          <%= link_to "Like", like_text_path(:ref_num => x.id), type: "button", class: "btn btn-info pull-right like-button" %>
       <% end %>
     </div>
 <% end %>
 <hr />
 <h3>Likes</h3>
+
+
+
+<% @liked_texts.each do |y| %>
+    <% x = TextPost.where(id: y.id) %>
+    <%= x %><br />
+<% end %>
+
+
+<!--#for each Vote item pulled, I must locate the TextPost ID that matches it, and print it out.-->
+
+
+
+
+
+
+
+
+
+
+

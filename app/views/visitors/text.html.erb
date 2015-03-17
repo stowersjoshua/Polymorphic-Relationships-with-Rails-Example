@@ -5,12 +5,12 @@
 
 <% @text_posts.each do |x| %>
     <div class="post-box well">
-      Posted by: <%= link_to x.user.username, x %><br />
+      <% if user_signed_in? %>
+          <%= link_to "Like", like_text_path(:ref_num => x.id), type: "button", class: "btn btn-info pull-right like-button" %>
+      <% end %>
+      Posted by: <%= link_to x.user.username, user_path(x) %><br />
       Title: <%= x.title %><br />
       Message: <%= x.message %>
-      <% if user_signed_in? %>
-          <button type="button" class="btn btn-info pull-right like-button">Like</button>
-      <% end %>
     </div>
 <% end %>
 

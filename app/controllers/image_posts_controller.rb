@@ -10,6 +10,13 @@ class ImagePostsController < ApplicationController
     render action: "show"
   end
 
+  def like
+    #Select the ImagePost to be liked
+    @liked_image = ImagePost.find(params[:ref_num])
+    @liked_image.votes.create!(like: true, user_id: current_user.id)
+    redirect_to root_path
+  end
+
   def show
 
   end
