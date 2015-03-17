@@ -1,0 +1,26 @@
+<%= form_for(@text_post, :html => { :multipart => true }) do |f| %>
+    <% if @text_post.errors.any? %>
+        <div id="error_explanation">
+
+          <ul>
+            <% @text_post.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :message %><br>
+      <%= f.text_field :message %>
+    </div>
+
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

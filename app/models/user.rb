@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   validates :username, :uniqueness => true
-
+  has_many :text_posts
 
 
   # Include default devise modules. Others available are:
