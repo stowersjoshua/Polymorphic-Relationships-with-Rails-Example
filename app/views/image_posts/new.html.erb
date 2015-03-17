@@ -1,0 +1,25 @@
+<%= form_for(@image_post, :html => { :multipart => true }) do |f| %>
+    <% if @image_post.errors.any? %>
+        <div id="error_explanation">
+
+          <ul>
+            <% @image_post.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </div>
+
+    <div class="field">
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

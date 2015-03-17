@@ -1,0 +1,17 @@
+
+
+
+
+
+<% @text_posts.each do |x| %>
+    <div class="post-box well">
+      Posted by: <%= link_to x.user.username, x %><br />
+      Title: <%= x.title %><br />
+      Message: <%= x.message %>
+      <% if user_signed_in? %>
+          <button type="button" class="btn btn-info pull-right like-button">Like</button>
+      <% end %>
+    </div>
+<% end %>
+
+
