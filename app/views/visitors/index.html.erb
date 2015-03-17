@@ -1,24 +1,17 @@
 
-<% if user_signed_in? %>
-Welcome back, <%= current_user.username %>
+
+
+
+
+<% @text_posts.each do |x| %>
+    <div class="post-box well">
+      Posted by: <%= link_to x.user.username, x %><br />
+      Title: <%= x.title %><br />
+      Message: <%= x.message %>
+      <% if user_signed_in? %>
+          <button type="button" class="btn btn-info pull-right like-button">Like</button>
+      <% end %>
+    </div>
 <% end %>
 
 
-Click HERE to begin make your own post posts.
-
-
-
-
-Show all posts here. If the user is signed in, also show a like button.
-
-
-
-
-
-
-
-
-
-<div style="background-color: moccasin; padding: 20px; width: 600px;">
-  <%= link_to 'See a list of our amazing users!', users_path %>
-</div>

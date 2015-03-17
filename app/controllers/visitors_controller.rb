@@ -1,6 +1,6 @@
 class VisitorsController < ApplicationController
   def index
     @users = User.all
-    #@posts = x
+    @text_posts = TextPost.all
   end
 end
