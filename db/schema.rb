@@ -11,17 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150317064933) do
-
-  create_table "text_posts", force: true do |t|
-    t.string   "title"
-    t.text     "message"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "text_posts", ["user_id"], name: "index_text_posts_on_user_id"
+ActiveRecord::Schema.define(version: 20150317051901) do
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
