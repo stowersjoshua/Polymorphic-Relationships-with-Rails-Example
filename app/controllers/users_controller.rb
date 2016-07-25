@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
 
 
+
     @liked_images = Vote.where(:user_id => @user.id, :voteable_type => "ImagePost")
   end
 
